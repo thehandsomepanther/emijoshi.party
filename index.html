@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <meta name="robots" content="noindex">
 <html>
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
@@ -10,21 +11,21 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Doto:wght@100..900&display=swap" rel="stylesheet">
   <title>emijoshi party</title>
-<style id="jsbin-css">
-span, p {
-  font-family: "Doto", serif;
-  font-optical-sizing: auto;
-  font-size: 80px;
-  font-weight: 800;
-  font-style: normal;
-  font-variation-settings: "ROND" 0;
-}
-
-img {
-  width: 600px;
-}
-</style>
+  <style id="jsbin-css">
+    span,
+    p {
+      font-family: "Doto", serif;
+      font-optical-sizing: auto;
+      font-size: 2rem;
+      font-weight: 800;
+      font-style: normal;
+      font-variation-settings: "ROND" 0;
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+  </style>
 </head>
+
 <body>
   <span class="anim">e</span>
   <span class="anim">m</span>
@@ -40,34 +41,37 @@ img {
   <span class="anim">r</span>
   <span class="anim">t</span>
   <span class="anim">y</span>
-
   <br>
   <br>
-
-  <div>
-    <p style="display: inline-block; vertical-align: top;">save the</p>
-    <img style="display: inline-block; margin-top: -48px; width: 350px; z-index: -1; position: absolute;" src="dates.jpg" />
+  <br>
+  <br>
+  <div style="display: flex; align-items: center; flex-wrap: wrap; row-gap: 2rem;">
+    <p style="display: inline-block; vertical-align: top; margin-right: .5rem; margin-top: 0; margin-bottom: 0;">save the</p>
+    <img style="display: inline-block; z-index: -1; height: 2rem; width: auto; scale: 4; margin-left: 3rem;" src="dates.jpg">
   </div>
+  <br>
+  <br>
+  <br>
+  <p style="margin-top: 0; margin-bottom: 0;">sept 27-28 2025</p>
+  <p style="margin-top: 0; margin-bottom: 0;">chicago il</p>
+  <script>
+    const spans = document.querySelectorAll('span.anim')
+    let f = 0
 
-  <p>sept 27-28 2025</p>
-  <p>chicago il</p>
-<script>
-const spans = document.querySelectorAll('span.anim')
-let f = 0
+    function onFrame() {
+      for (let i = 0; i < spans.length; i++) {
+        const offset = (spans.length - i) * Math.PI / 4
+        const x = Math.sin(offset + f)
 
-function onFrame() {
-  for (let i = 0; i < spans.length; i++) {
-    const offset = (spans.length - i) * Math.PI/4
-    const x = Math.sin(offset + f)
+        spans[i].style.fontWeight = (x + 1) / 2 * 500 + 400
+      }
 
-    spans[i].style.fontWeight = (x + 1) / 2 * 500 + 400
-  }
+      f++
+      setTimeout(onFrame, 150)
+    }
 
-  f++
-  setTimeout(onFrame, 150)
-}
-
-onFrame()
-</script>
+    onFrame()
+  </script>
 </body>
+
 </html>
