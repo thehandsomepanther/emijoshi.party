@@ -11,17 +11,44 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Doto:wght@100..900&display=swap" rel="stylesheet">
   <title>emijoshi party</title>
-  <style id="jsbin-css">
+  <style>
+    :root {
+      --base-rem: 4rem;
+    }
+
+
     span,
     p {
       font-family: "Doto", serif;
       font-optical-sizing: auto;
-      font-size: 2rem;
+      font-size: var(--base-rem);
       font-weight: 800;
       font-style: normal;
       font-variation-settings: "ROND" 0;
       margin-top: 0;
       margin-bottom: 0;
+    }
+
+    #save-the-container {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      row-gap: var(--base-rem);
+    }
+
+    #save-the-container>p {
+      display: inline-block;
+      vertical-align: top;
+      margin-right: calc(var(--base-rem) / 4);
+    }
+
+    #save-the-container>img {
+      display: inline-block;
+      z-index: -1;
+      height: var(--base-rem);
+      width: auto;
+      scale: 4;
+      margin-left: calc(var(--base-rem) * 1.5);
     }
   </style>
 </head>
@@ -45,15 +72,15 @@
   <br>
   <br>
   <br>
-  <div style="display: flex; align-items: center; flex-wrap: wrap; row-gap: 2rem;">
-    <p style="display: inline-block; vertical-align: top; margin-right: .5rem; margin-top: 0; margin-bottom: 0;">save the</p>
-    <img style="display: inline-block; z-index: -1; height: 2rem; width: auto; scale: 4; margin-left: 3rem;" src="dates.jpg">
+  <div id="save-the-container">
+    <p>save the</p>
+    <img src="dates.jpg">
   </div>
   <br>
   <br>
   <br>
-  <p style="margin-top: 0; margin-bottom: 0;">sept 27-28 2025</p>
-  <p style="margin-top: 0; margin-bottom: 0;">chicago il</p>
+  <p>sept 27-28 2025</p>
+  <p>chicago il</p>
   <script>
     const spans = document.querySelectorAll('span.anim')
     let f = 0
